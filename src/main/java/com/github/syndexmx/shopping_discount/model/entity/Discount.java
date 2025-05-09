@@ -1,5 +1,7 @@
 package com.github.syndexmx.shopping_discount.model.entity;
 
+import com.github.syndexmx.shopping_discount.model.enums.DiscountCollectionType;
+import com.github.syndexmx.shopping_discount.model.enums.converter.DiscountCollectionTypeConverter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,6 +29,9 @@ public class Discount {
     private LocalDateTime expiresAt;
     
     private Integer discountValue;
+
+    @Convert(converter = DiscountCollectionTypeConverter.class)
+    private DiscountCollectionType collectionType;
 
     @ManyToMany
     @JoinColumn(name = "itemCategory_id")
