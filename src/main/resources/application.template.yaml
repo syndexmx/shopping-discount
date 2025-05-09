@@ -26,6 +26,9 @@ spring:
     bootstrapServers:
       - localhost: 9092
     topics:
+      - name: "request-discounts"
+        partitions: 1
+        replication-factor: 1
       - name: "publish-discount"
         partitions: 1
         replication-factor: 1
