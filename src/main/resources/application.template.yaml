@@ -1,0 +1,35 @@
+
+server:
+  port:8080
+
+spring:
+  application:
+    name: shopping-discount
+  datasource:
+    url: jdbc:h2:mem:demoshoppingdiscount
+    username: DATABASE_USER_NAME
+    password: DATABASE_USER_PASSWORD
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      hibernate.type: true
+      hibernate.use_sql_commands: true
+  kafka:
+    admin:
+      properties:
+        offset.topic.replication.factor: 1
+        transaction.state.log.replication.factor: 1
+        transaction.state.log.min.isr: 1
+    bootstrapServers:
+      - localhost: 9092
+    topics:
+      - name: "publish-discount"
+        partitions: 1
+        replication-factor: 1
+
+logging:
+  level:
+    org.hibernate.type.descriptor.sql: TRACE
