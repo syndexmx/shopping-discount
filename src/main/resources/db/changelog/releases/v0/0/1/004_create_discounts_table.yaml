@@ -4,7 +4,7 @@ databaseChangeLog:
       author: Maxim Shapovalov
       changes:
         - createTable:
-            tableName: discount
+            tableName: discounts
             columns:
               - column:
                   name: discount_id
@@ -28,6 +28,10 @@ databaseChangeLog:
                   type: TIMESTAMP
                   constrains:
                     nullable: false
+              - column:
+                  name: collection_type
+                  type: VARCHAR(20)
+                  nullable: false
               - column:
                   name: item_categories
                   type: BIG_INT
