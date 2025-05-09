@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -21,6 +22,10 @@ public class ItemCategory {
     private Long itemCategoryId;
 
     private String name;
+
+    @ManyToMany
+    @JoinColumn(name = "item_id")
+    private Set<Item> items;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

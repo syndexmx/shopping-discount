@@ -29,10 +29,6 @@ public class Item {
 
     private BigDecimal price;
 
-    @ManyToMany
-    @JoinColumn(name = "itemCategoryId")
-    private Set<ItemCategory> itemCategories;
-
     @CreationTimestamp
     private LocalDateTime createdAt;
 

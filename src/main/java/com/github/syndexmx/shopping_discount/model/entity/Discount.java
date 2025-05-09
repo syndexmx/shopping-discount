@@ -29,11 +29,11 @@ public class Discount {
     private Integer discountValue;
 
     @ManyToMany
-    @JoinColumn(name = "itemCategoryId")
+    @JoinColumn(name = "itemCategory_id")
     private ItemCategory itemCategory;
 
     @ManyToMany
-    @JoinColumn(name = "clientId")
+    @JoinColumn(name = "client_id")
     private Set<Client> clients;
 
     @CreationTimestamp
