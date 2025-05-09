@@ -1,7 +1,9 @@
 package com.github.syndexmx.shopping_discount.model.entity;
 
 import com.github.syndexmx.shopping_discount.model.enums.ClientLevel;
+import com.github.syndexmx.shopping_discount.model.enums.Region;
 import com.github.syndexmx.shopping_discount.model.enums.converter.ClientLevelConverter;
+import com.github.syndexmx.shopping_discount.model.enums.converter.RegionConverter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,7 +31,9 @@ public class Client {
     private String lastName;
     private LocalDate birthDate;
     private Long phoneNumber;
-    private String region;
+
+    @Convert(converter = RegionConverter.class)
+    private Region region;
     private String city;
     private String street;
     private String building;
