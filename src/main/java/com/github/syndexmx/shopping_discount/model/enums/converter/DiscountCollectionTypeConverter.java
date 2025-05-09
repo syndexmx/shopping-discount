@@ -14,6 +14,6 @@ public class DiscountCollectionTypeConverter implements AttributeConverter<Disco
 
     @Override
     public DiscountCollectionType convertToEntityAttribute(String dbData) {
-        return dbData == null ? null : Region.valueOf(dbData);
+        return dbData == null ? null : DiscountCollectionType.valueOf(dbData);
     }
 }
