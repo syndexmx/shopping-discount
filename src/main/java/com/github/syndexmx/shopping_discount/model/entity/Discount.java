@@ -25,6 +25,8 @@ public class Discount {
 
     private LocalDateTime validFrom;
     private LocalDateTime expiresAt;
+    
+    private Integer discountValue;
 
     @ManyToMany
     @JoinColumn(name = "itemCategoryId")
