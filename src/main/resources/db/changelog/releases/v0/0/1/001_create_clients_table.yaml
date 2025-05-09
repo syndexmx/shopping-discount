@@ -4,6 +4,7 @@ databaseChangeLog:
       author: Maxim Shapovalov
       changes:
         - createTable:
+            tableName: clients
             columns:
               - column:
                   name: client_id

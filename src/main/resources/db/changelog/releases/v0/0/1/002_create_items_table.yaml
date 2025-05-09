@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-items
+      author: Maxim Shapovalov
+      changes:
+        - createTable:
+            tableName: items
+            columns:
+              - column:
+                  name: item_id
+                  type: BIG_INT
+                  constrains:
+                    primaryKey: true
+                    autoIncrement: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(50)
+                  nullable: false
+              - column:
+                  name: producer
+                  type: VARCHAR(50)
+                  nullable: false
+              - column:
+                  name: article
+                  type: VARCHAR(50)
+                  nullable: false
+              - column:
+                  name: description
+                  type: VARCHAR(252)
+                  nullable: false
+              - column:
+                  name: price
+                  type: DECIMAL(19, 4)
+                  constrains:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constrains:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constrains:
+                    nullable: false
