@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-create-discounts
+      author: Maxim Shapovalov
+      changes:
+        - createTable:
+            tableName: discount
+            columns:
+              - column:
+                  name: discount_id
+                  type: BIG_INT
+                  constrains:
+                    primaryKey: true
+                    autoIncrement: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(50)
+                  nullable: false
+              - column:
+                  name: valid_from
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constrains:
+                    nullable: false
+              - column:
+                  name: expires_at
+                  type: TIMESTAMP
+                  constrains:
+                    nullable: false
+              - column:
+                  name: item_categories
+                  type: BIG_INT
+                  constrains:
+                    nullable: false
+                    foreignKeyName: fk_discount_item_categories
+                    referencedTableName: items_categories
+                    referencedColumnName: item_category_id
+              - column:
+                  name: clients
+                  type: BIG_INT
+                  constrains:
+                    nullable: false
+                    foreignKeyName: fk_discount_clients
+                    referencedTableName: clients
+                    referencedColumnName: client_id
+              - column:
+                  name: discount_value
+                  type: INT
+                  constrains:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constrains:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constrains:
+                    nullable: false

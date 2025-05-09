@@ -34,8 +34,8 @@ public class Discount {
     private DiscountCollectionType collectionType;
 
     @ManyToMany
-    @JoinColumn(name = "itemCategory_id")
-    private ItemCategory itemCategory;
+    @JoinColumn(name = "item_category_id")
+    private Set<ItemCategory> itemCategories;
 
     @ManyToMany
     @JoinColumn(name = "client_id")

@@ -1,13 +1,13 @@
 databaseChangeLog:
   - changeSet:
-      id: 002-create-items
+      id: 003-create-items-categories
       author: Maxim Shapovalov
       changes:
         - createTable:
-            tableName: items
+            tableName: item_categories
             columns:
               - column:
-                  name: item_id
+                  name: item_category_id
                   type: BIG_INT
                   constrains:
                     primaryKey: true
@@ -18,22 +18,13 @@ databaseChangeLog:
                   type: VARCHAR(50)
                   nullable: false
               - column:
-                  name: producer
-                  type: VARCHAR(50)
-                  nullable: false
-              - column:
-                  name: article
-                  type: VARCHAR(50)
-                  nullable: false
-              - column:
-                  name: description
-                  type: VARCHAR(252)
-                  nullable: false
-              - column:
-                  name: price
-                  type: DECIMAL(19, 4)
+                  name: items
+                  type: BIG_INT
                   constrains:
                     nullable: false
+                    foreignKeyName: fk_item_category_item
+                    referencedTableName: items
+                    referencedColumnName: item_id
               - column:
                   name: created_at
                   type: TIMESTAMP
