@@ -12,10 +12,10 @@ import javax.validation.constraints.NotNull;
 @Data
 public class PromoDiscountRequest {
 
-    @NotNull
+    @NotNull(message = "clientId should not be null")
     private Long client_id;
-    @NotNull
+    @NotNull(message = "itemCategoryId should not be null")
     private Long itemCategoryId;
-    @NotNull
+    @NotNull(message = "promoCode is absent")
     private String promoCode;
 }

@@ -11,9 +11,9 @@ import javax.validation.constraints.NotNull;
 @Data
 public class LoyaltyDiscountRequest {
 
-    @NotNull
-    private Long client_id;
-    @NotNull
+    @NotNull(message = "clientId should not be null")
+    private Long clientId;
+    @NotNull(message = "itemCategoryId should not be null")
     private Long itemCategoryId;
 
 }
