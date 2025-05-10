@@ -21,6 +21,7 @@ public class Discount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "discount_id", updatable = false)
     private Long discountId;
 
     private String name;
@@ -42,6 +43,7 @@ public class Discount {
     private Set<Client> clients;
 
     @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp

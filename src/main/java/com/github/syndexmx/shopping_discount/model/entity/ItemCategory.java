@@ -19,6 +19,7 @@ public class ItemCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "item_category_id", updatable = false)
     private Long itemCategoryId;
 
     private String name;
@@ -28,6 +29,7 @@ public class ItemCategory {
     private Set<Item> items;
 
     @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp

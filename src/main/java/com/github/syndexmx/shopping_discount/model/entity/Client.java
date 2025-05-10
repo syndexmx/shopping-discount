@@ -24,6 +24,7 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "client_id", updatable = false)
     private Long clientId;
 
     private String firstName;
@@ -45,6 +46,7 @@ public class Client {
     private ClientLevel clientLevel;
 
     @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp

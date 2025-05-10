@@ -20,6 +20,7 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "item_id", updatable = false)
     private Long itemId;
 
     private String name;
@@ -30,6 +31,7 @@ public class Item {
     private BigDecimal price;
 
     @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
